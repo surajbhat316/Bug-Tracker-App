@@ -19,7 +19,7 @@
     align-items: center;
     width: 200px;
     height: 200px;
-    background-color: wheat;
+    background-color: white;
     border-radius: 1rem;
     margin: 1rem;
 }
@@ -33,4 +33,20 @@
 .add-new p{
     position: absolute;
     bottom: 1rem;
+}
+
+.project{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: wheat;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+.project p{
+    font-size: x-large;
 }

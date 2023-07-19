@@ -6,4 +6,12 @@
         <p>Create Project</p>
     </div>
 
+    <%for(let project of projects){%>
+        <div class="project">
+            <p><%= project.name%></p>
+            <a style="text-decoration: none; position: absolute; bottom: 2rem;" href="/project/<%=project._id%>">View</a>
+        </div>
+
+    <%} %>
+
 </div>
