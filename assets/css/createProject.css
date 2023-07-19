@@ -1,0 +1,28 @@
+.main-container{
+    margin: 7rem 0rem;
+
+}
+
+#project-creation-form{
+    background-color: cyan;
+    width: fit-content; 
+    margin: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 2px 4px lightblue;
+}
+
+td label, input, textarea{
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+td input, textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+button{
+    margin-left: 50% ;
+    transform: translateX(-50%);
+}

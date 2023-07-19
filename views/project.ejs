@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/createProject.css">
+
+<div class="container main-container">
+
+    <div class="form-container">
+        <form id="project-creation-form" action="/project/create" method="post">
+            <table>
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input type="text" name="name" id="name" placeholder="Project Name" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="description">Description</label></td>
+                    <td><textarea name="description" id="description" cols="30" rows="10" placeholder="Project Description" required></textarea></td>
+                </tr>
+
+                <tr>
+                    <td><label for="author">Author</label></td>
+                    <td><input type="text" name="author" id="author" placeholder="Project Author" required></td>
+                </tr>
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+

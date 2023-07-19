@@ -4,6 +4,8 @@ const PORT = 8000;
 
 app.use(express.static('./assets'));
 
+
+app.use(express.urlencoded());
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
