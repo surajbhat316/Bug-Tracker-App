@@ -1,3 +1,11 @@
 
+<div style="margin-top: 50px;">
+    <p>The Current Project Id is <%= project._id%></p>
 
-<p>The Current Project Id is <%= project._id%></p>
+    <% if(bugs.length ==0 ){%>
+        <p>No Bugs Currently for the given project</p>    
+    <%}else{%>
+        <p><%= bugs %></p>    
+    <%}%>
+</div>
+

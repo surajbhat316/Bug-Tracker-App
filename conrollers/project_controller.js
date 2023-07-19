@@ -1,4 +1,5 @@
 const Project = require('../models/projects');
+const Issue = require('../models/issues');
 
 module.exports.createProject = async function(req,res){
 
@@ -24,8 +25,11 @@ module.exports.getProjectDetails = async function(req, res){
     try{
         let project = await Project.findOne({_id : req.params.id});
         console.log(project);
+        let bugs = await Issue.find({project: project._id});
+        console.log(bugs);
         return res.render('project_info', {
-            project: project
+            project: project,
+            bugs: bugs
         })
     }   
     catch(err){
