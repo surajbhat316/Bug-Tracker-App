@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/bug.css">
+<div class="container main-container"> 
+    <form action="/bug/<%= project._id%>/create" method="post">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input class="form-control" type="text" name="title" id="title" placeholder="Title of the bug" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Describe the bug in a few words..." required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <select name="label" class="form-select" aria-label="Default select example" required>
+                <option selected value="" disabled>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input class="form-control" type="text" name="author" id="author" placeholder="name of the author" required>
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

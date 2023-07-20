@@ -3,9 +3,10 @@
     <p>The Current Project Id is <%= project._id%></p>
 
     <% if(bugs.length ==0 ){%>
-        <p>No Bugs Currently for the given project</p>    
+        <p>No Bugs Currently</p>  
     <%}else{%>
         <p><%= bugs %></p>    
     <%}%>
+    <p><a href="/bug/<%=project._id%>">Create a Bug</a></p>  
 </div>
 
