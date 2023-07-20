@@ -2,17 +2,18 @@ const Issue = require('../models/issues');
 const Project = require('../models/projects');
 module.exports.createBug = async function(req,res){
     try {
+        let labels = req.body.label!=null?req.body.label:req.body.newLabel;
         let bug = await Issue.create({
             title: req.body.title,
             description: req.body.description,
-            labels: req.body.label,
+            labels: labels,
             author: req.body.author,
             project: req.params.id
         });
         // Update the labels of the associated Projects Labels
         let project = await Project.findById(req.params.id);
-        if(!project.labels.includes(req.body.label)){
-            project.labels.push(req.body.label);
+        if(!project.labels.includes(labels)){
+            project.labels.push(labels);
         }
         project.save();
         return res.redirect('/project/'+req.params.id);
