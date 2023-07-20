@@ -4,24 +4,23 @@
 
     <div class="form-container">
         <form id="project-creation-form" action="/project/create" method="post">
-            <table>
-                <tr>
-                    <td><label for="name">Name</label></td>
-                    <td><input type="text" name="name" id="name" placeholder="Project Name" required></td>
-                </tr>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input class="form-control" type="text" name="name" id="name" placeholder="Project Name" required>
+        </div>
 
-                <tr>
-                    <td><label for="description">Description</label></td>
-                    <td><textarea name="description" id="description" cols="30" rows="10" placeholder="Project Description" required></textarea></td>
-                </tr>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Project Description" required></textarea>    
+        </div>
 
-                <tr>
-                    <td><label for="author">Author</label></td>
-                    <td><input type="text" name="author" id="author" placeholder="Project Author" required></td>
-                </tr>
-            </table>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input class="form-control" type="text" name="author" id="author" placeholder="Project Author" required>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+        
     </div>
 
 </div>

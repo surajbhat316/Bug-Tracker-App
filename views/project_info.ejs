@@ -1,12 +1,36 @@
+<link rel="stylesheet" href="/css/project_info.css">
+<div class="main-container">
 
-<div style="margin-top: 50px;">
-    <p>The Current Project Id is <%= project._id%></p>
+    <div class="project-info">
+        <h1><%= project.name%></h1>
+        <p><%= project.description%></p>
+        <p>Author: <%=project.author%></p>
+    </div>
+    <header style="margin-top: 2rem;">
+        <h4>Bugs for the given project are as under</h4>
+    </header>
+    <div class="bugs-container">
+        <div class="add-bug">
+            <p><a href="/bug/<%=project._id%>">Create a Bug</a></p>  
+        </div>
 
-    <% if(bugs.length ==0 ){%>
-        <p>No Bugs Currently</p>  
-    <%}else{%>
-        <p><%= bugs %></p>    
-    <%}%>
-    <p><a href="/bug/<%=project._id%>">Create a Bug</a></p>  
+        <% if(bugs.length ==0 ){%>
+            <div class="bugs">
+                <p>No Bugs Currently</p> 
+            </div>
+        <%}else{%>
+            <% for(let bug of bugs){%>
+                <div class="bugs">
+                    <h5><%=bug.title%></h5>
+                    <p><%=bug.description%></p>
+                    <p>Label : <%= bug.labels%></p>
+                    <p>Author : <%=bug.author%></p>
+                </div>  
+            <%}%>
+            
+        <%}%>
+        
+    </div>
 </div>
+
 
