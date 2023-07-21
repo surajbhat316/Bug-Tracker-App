@@ -1,5 +1,5 @@
 body{
-    height: 120vh;
+    height: 200vh;
 }
 .main-container{
     width: 90vw;
@@ -41,10 +41,9 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
-    background-color: aliceblue;
-    margin: 2rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
     border-radius: 1rem;
 }
 
@@ -61,4 +60,26 @@ a{
     height: 200px;
     margin: 2rem;
     border-radius: 1rem;
+}
+
+#issue-container{
+    width: 90%;
+    height: 50vh;
+    margin :1rem auto;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.bug{
+    background-color: lightgreen;
+    width: 70%;
+    height: fit-content;
+    margin :1rem auto;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.info{
+    display: flex;
+    flex-direction: row;
 }

@@ -43,3 +43,144 @@ module.exports.getBugs = async function(req, res) {
         })
     }
 }
+
+
+module.exports.getByAuthorName = async function(req, res) {
+    try{
+        let project  = await Project.findOne({_id: req.params.id});
+        if(!project){
+            return res.status(404).json({
+                message: "Project not found"
+            });
+        }
+        let bugs = await Issue.find({
+            project: req.params.id ,
+            author: req.body.author_name
+        });
+        if(bugs.length>0){
+            return res.render('project_info',{
+                project: project,
+                bugs: bugs
+            });
+        }else{
+            return res.render('project_info',{
+                project: project,
+                bugs: []
+            });
+        }
+    }
+    catch(err){
+        console.log("Error: " + err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+
+}
+
+
+module.exports.getByTitle = async function(req,res){
+    try{
+        console.log("Enters getByTitle");
+        let project  = await Project.findOne({_id: req.params.id});
+        if(!project){
+            return res.status(404).json({
+                message: "Project not found"
+            });
+        }
+        let bugs = await Issue.find({
+            project: req.params.id ,
+            title: {
+                $regex: req.body.title
+            }
+        });
+        if(bugs.length>0){
+            return res.render('project_info',{
+                project: project,
+                bugs: bugs
+            });
+        }else{
+            return res.render('project_info',{
+                project: project,
+                bugs: []
+            });
+        }
+    }
+    catch(err){
+        console.log("Error: " + err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
+
+module.exports.getByDescription = async function(req,res){
+    try{
+        console.log(req.body);
+        let project  = await Project.findOne({_id: req.params.id});
+        if(!project){
+            return res.status(404).json({
+                message: "Project not found"
+            });
+        }
+        let bugs = await Issue.find({
+            project: req.params.id ,
+            description: {
+                $regex: req.body.description
+            }
+        });
+        if(bugs.length>0){
+            return res.render('project_info',{
+                project: project,
+                bugs: bugs
+            });
+        }else{
+            return res.render('project_info',{
+                project: project,
+                bugs: []
+            });
+        }
+    }
+    catch(err){
+        console.log("Error: " + err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
+
+module.exports.getByLabels = async function(req,res){
+    try{
+        console.log(req.body);
+        let labels = req.body.labels
+        let project  = await Project.findOne({_id: req.params.id});
+        if(!project){
+            return res.status(404).json({
+                message: "Project not found"
+            });
+        }
+        let bugs = await Issue.find({
+            project: req.params.id ,    
+            labels: {
+                $in : labels
+            }
+        });
+        if(bugs.length>0){
+            return res.render('project_info',{
+                project: project,
+                bugs: bugs
+            });
+        }else{
+            return res.render('project_info',{
+                project: project,
+                bugs: []
+            });
+        }
+    }
+    catch(err){
+        console.log("Error: " + err);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
