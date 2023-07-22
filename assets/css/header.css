@@ -4,7 +4,9 @@ header .navbar{
 
 
 .navbar-toggler{
+    position: relative;
     background-color: white !important;
+    left: 0rem;
 }
 
 .navbar a{

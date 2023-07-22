@@ -1,21 +1,3 @@
-/* @media screen and (max-width: 10px) {
-    body, p, span,a{
-        font-size: 1.7rem !important;
-    }
-
-    .add-new, .project{
-        width: 400px;
-        height: 400px;
-        margin: 2rem auto;
-    }
-
-    .main-container{
-        display: flex;
-        flex-direction: column;
-    }
-
-} */
-
 @media screen and (max-width: 1179px) {
     body, p, span, a{
         font-size: 2rem !important;
