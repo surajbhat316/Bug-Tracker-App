@@ -1,17 +1,20 @@
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/media/media_home.css">
 
 <div class="main-container">
-    <div class="add-new">
-        <a href="/project"><span><i style="font-size: 1.5rem;" class="fa-solid fa-plus"></i></span></a>
-        <p>Create Project</p>
-    </div>
+    <a href="/project">
+        <div class="add-new">
+            <!-- <a href="/project"><span><i style="font-size: 1.5rem;" class="fa-solid fa-plus"></i></span></a> -->
+            <span><i style="font-size: 1.5rem;" class="fa-solid fa-plus"></i></span>
+            <p>Create Project</p>
+        </div>
+    </a>
 
     <%for(let project of projects){%>
         <div class="project">
             <p><%= project.name%></p>
             <a style="text-decoration: none; position: absolute; bottom: 2rem;" href="/project/<%=project._id%>">View</a>
         </div>
-
     <%} %>
 
 </div>

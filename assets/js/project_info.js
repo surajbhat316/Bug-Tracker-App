@@ -69,7 +69,7 @@
         });
     });    
     
-
+    
     function appendDataToHTML(data){
         let dataContainer = document.getElementById('issue-container');
         dataContainer.innerHTML = '';   

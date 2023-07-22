@@ -1,9 +1,12 @@
+body{
+    background-color: cyan;
+}
 .main-container{
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: cyan;
+    /* background-color: cyan; */
     width: 90%;
     height: auto;
     border-radius: 1rem;
@@ -49,4 +52,8 @@
 }
 .project p{
     font-size: x-large;
+}
+
+.add-new:hover, .project:hover{
+    box-shadow: 0px 0px 19px 7px lightgrey;
 }
