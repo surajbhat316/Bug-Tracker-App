@@ -1,6 +1,9 @@
 body{
     height: 200vh;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 .main-container{
     width: 100vw;
     height: auto;
@@ -75,6 +78,10 @@ a{
     overflow: auto;
 }
 
+#issue-container::-webkit-scrollbar{
+    display: none;
+}
+
 .bug{
     background-color: lightgreen;
     width: 70%;
@@ -92,4 +99,5 @@ a{
     display: flex;
     justify-content: space-between; 
     flex-wrap: wrap;
+    padding: 2rem;
 }
