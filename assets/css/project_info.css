@@ -2,23 +2,27 @@ body{
     height: 200vh;
 }
 .main-container{
-    width: 90vw;
+    width: 100vw;
     height: auto;
     margin: auto;
-    margin-top: 5rem;
-    text-align: center;
+    margin-top: 3rem;
     padding: 2rem;
-    border-radius: 1rem;
-    background-color: lightgrey;
+    background-color: rgb(8, 8, 120);
+    color: white;
 }
 
 .main-container .project-info{
-    background-color: cadetblue;
-    width: fit-content;
-    margin: auto;
+    width: 50%;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 2px 2px 2px 2px white;
+    color: white;
+    margin: 1rem auto;
+}
+
+.main-container .project-info .description{
+    margin: 2rem auto;
+    line-height: 1.5rem;
+    
 }
 
 .bugs-container{
@@ -28,7 +32,6 @@ body{
     flex-wrap: wrap;
     width: 90%;
     height: auto;
-    /* background-color: blue; */
     margin: auto;
     margin-top: 1rem;
     border-radius: 1rem;
@@ -43,12 +46,13 @@ body{
     align-items: center;
     width: fit-content;
     height: fit-content;
-    margin: auto;
     border-radius: 1rem;
+    margin: auto;
 }
 
 a{
     text-decoration: none;
+    color: white;
 }
 
 .bugs{
@@ -82,4 +86,10 @@ a{
 .info{
     display: flex;
     flex-direction: row;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
 }
