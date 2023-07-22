@@ -57,6 +57,23 @@ module.exports.getByAuthorName = async function(req, res) {
             project: req.params.id ,
             author: req.body.author_name
         });
+        if(req.xhr){
+            if(bugs.length>0){
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: bugs
+                    }
+                });
+            }else{
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: []
+                    }
+                });
+            }
+        }
         if(bugs.length>0){
             return res.render('project_info',{
                 project: project,
@@ -75,13 +92,11 @@ module.exports.getByAuthorName = async function(req, res) {
             message: "Internal Server Error"
         });
     }
-
 }
 
 
 module.exports.getByTitle = async function(req,res){
     try{
-        console.log("Enters getByTitle");
         let project  = await Project.findOne({_id: req.params.id});
         if(!project){
             return res.status(404).json({
@@ -94,6 +109,24 @@ module.exports.getByTitle = async function(req,res){
                 $regex: req.body.title
             }
         });
+
+        if(req.xhr){
+            if(bugs.length>0){
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: bugs
+                    }
+                });
+            }else{
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: []
+                    }
+                });
+            }
+        }
         if(bugs.length>0){
             return res.render('project_info',{
                 project: project,
@@ -129,6 +162,25 @@ module.exports.getByDescription = async function(req,res){
                 $regex: req.body.description
             }
         });
+
+        if(req.xhr){
+            if(bugs.length>0){
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: bugs
+                    }
+                });
+            }else{
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: []
+                    }
+                });
+            }
+        }
+
         if(bugs.length>0){
             return res.render('project_info',{
                 project: project,
@@ -165,6 +217,25 @@ module.exports.getByLabels = async function(req,res){
                 $in : labels
             }
         });
+
+        if(req.xhr){
+            if(bugs.length>0){
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: bugs
+                    }
+                });
+            }else{
+                return res.status(200).json({
+                    data: {
+                        project: project,
+                        bugs: []
+                    }
+                });
+            }
+        }
+
         if(bugs.length>0){
             return res.render('project_info',{
                 project: project,

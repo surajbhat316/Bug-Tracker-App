@@ -16,37 +16,37 @@
 </div>
 
 <div style="display: flex;justify-content: space-between; flex-wrap: wrap;" class="container mt-4 filters">
-    <form id="searchAuthor" action="/bug/<%=project._id%>/searchByAuthor" method="post">
+    <form id="searchAuthor" data-id="<%=project._id%>" action="/bug/<%=project._id%>/searchByAuthor" method="post">
       <div style="display: flex; flex-direction: column;">
         <input type="search" name="author_name" id="search-by-author" placeholder="Enter Author name" required>
         <button type="submit" class="btn border">Search</button>
       </div>
     </form>
 
-    <form action="/bug/<%=project._id%>/searchByTitle" method="post">
+    <form id="searchTitle" data-id="<%=project._id%>" action="/bug/<%=project._id%>/searchByTitle" method="post">
       <div style="display: flex; flex-direction: column;">
         <input type="search" name="title" id="title" required placeholder="Search By Title">
         <button type="submit" class="btn border">Search</button>
       </div>
     </form>
 
-    <form action="/bug/<%=project._id%>/searchByDescription" method="post">
+    <form id="searchDescription" data-id="<%=project._id%>" action="/bug/<%=project._id%>/searchByDescription" method="post">
       <div style="display: flex; flex-direction: column;">
         <input type="search" name="description" id="description" required placeholder="Search By description">
         <button type="submit" class="btn border">Search</button>
       </div>
     </form>
 
-      <form action="/bug/<%=project._id%>/searchByLabels" method="post">
-        <div style="display: flex; flex-direction: column;">
-            <select name="labels" multiple size="4">
-              <%for(let label of project.labels){%>
-                  <option value="<%=label%>"><%=label%></option>
-              <%}%>
-            </select>
-            <button type="submit" class="btn border">Search</button>
-          </div>
-      </form>
+    <form id="searchLabel" data-id="<%=project._id%>" action="/bug/<%=project._id%>/searchByLabels" method="post">
+      <div style="display: flex; flex-direction: column;">
+          <select name="labels" multiple size="4">
+            <%for(let label of project.labels){%>
+                <option value="<%=label%>"><%=label%></option>
+            <%}%>
+          </select>
+          <button type="submit" class="btn border">Search</button>
+        </div>
+    </form>
     
 
 
